@@ -1,13 +1,7 @@
----
-title: "Design Breakdown"
-slug: design-breakdown
----
-
 Before we jump into Xcode, we'll first take some time to review and breakdown our tip calculator design. We'll learn to visually break apart designs into smaller chunks that we can code one at a time.
 
 ![Design Breakdown](assets/design_breakdown.png)
 
-> [info]
 In this tutorial, we'll often refer to the terms _UI_ (user interface) and _view_. Both terms refer to building the app's user interface, or the visual elements on the screen that the user interacts with.
 
 # Reviewing Our Design
