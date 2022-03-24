@@ -1,3 +1,5 @@
+# Design Breakdown
+
 Before we jump into Xcode, we'll first take some time to review and breakdown our tip calculator design. We'll learn to visually break apart designs into smaller chunks that we can code one at a time.
 
 ![Design Breakdown](assets/design_breakdown.png)
