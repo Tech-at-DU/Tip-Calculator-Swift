@@ -1,7 +1,4 @@
----
-title: "Theming and Styling"
-slug: theming
----
+# Theming and Styling
 
 To finish our tip calculator, we'll need to add some final touches to styling and implement our light/dark theme switch.
 
