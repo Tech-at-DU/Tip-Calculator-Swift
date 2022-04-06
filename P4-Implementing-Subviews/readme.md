@@ -1004,3 +1004,8 @@ Build and run your project. Tap the reset button a couple of times and verify th
 # Conclusion
 
 That's a wrap! We've learned a ton about implementing complex layouts with _auto-layout_, constraints and stack views. In the process, we've gotten a lot of practice and implemented the majority of our UI. In the next section, we'll work on implementing the logic for our tip calculator.
+
+# Continue to the next section
+
+[Tip Calculator Logic](../P5-Tip-Calculator-Logic)
+
