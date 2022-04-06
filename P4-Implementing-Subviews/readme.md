@@ -1,7 +1,4 @@
----
-title: "Implementing Subviews"
-slug: implementing-subviews
----
+# Implementing Subviews
 
 In the previous section, we implemented a skeleton of each of the UI groups in storyboard. If you build and run your project, your app should look like the following:
 
