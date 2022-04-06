@@ -192,3 +192,12 @@ In our tip calculator's app delegate, we don't add any code other than the boile
 We've just taken a look at the files in our new Xcode starter project. Throughout this tutorial, we'll continue to build on this project to create our final tip calculator.
 
 Let's get started by diving into storyboard and creating our views for our UI.
+
+# Continue to the next section
+
+[UI Layout](../P3-UI-Layout)
+- [Implementing Subviews](P4-Implementing-Subviews)
+- [Tip Calculator Logic](P5-Tip-Calculator-Logic)
+- [Theming](P6-Theming)
+- [Conclusion](P7-Conclusion)
+
