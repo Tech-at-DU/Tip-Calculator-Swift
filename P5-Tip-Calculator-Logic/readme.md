@@ -1,7 +1,4 @@
----
-title: "Tip Calculator Logic"
-slug: tip-calculator-logic
----
+# Tip Calculator Logic
 
 At this point, we've finished building our tip calculator's UI. However, if we launch our app and try to use it, nothing happens. Hmm... not particularly useful.
 
