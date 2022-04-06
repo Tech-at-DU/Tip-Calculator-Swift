@@ -1,7 +1,4 @@
----
-title: "Intro to Tip Calculator"
-slug: intro-tip-calculator
----
+# Intro to Tip Calculator
 
 This is the second tutorial of Make School's iOS app tutorial series. In this tutorial, we'll learn core concepts for creating UI layouts by building a tip calculator.
 
