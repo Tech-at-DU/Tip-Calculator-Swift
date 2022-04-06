@@ -1,7 +1,4 @@
----
-title: "Conclusion"
-slug: conclusion
----
+# Conclusion
 
 Well done! You've finished your second iOS tutorial.
 
