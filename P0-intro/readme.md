@@ -8,7 +8,7 @@ In the US, it's customary to leave a tip for waiting staff like bartenders and w
 
 Instead of having to do the math in your head, we'll build a simple tip calculator to calculate the tip for us.
 
-# Who Is This For?
+## Who Is This For?
 
 iOS Beginners with a basic understanding of navigating and using Xcode. This tutorial will focus on building intermediate-level UI with _Interface Builder_.
 
@@ -50,3 +50,7 @@ By the end of this tutorial, you will:
 Getting stuck when coding (and debugging) is a natural part of the programming process. If you find yourself stuck on a problem or lost, pause for a moment and take a breath. Maybe take a walk. Then retrace your steps (in the tutorial, not the walk). Make sure you've follow each step of the tutorial. It's easy to make typos or to accidentally skip over important steps.
 
 If you want to compare your code to the solution, you can find it [here](https://github.com/ellojess/Tip-Calculator).
+
+# Continue to the next section
+
+[Design](../P1-Design-Breakdown)
