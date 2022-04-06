@@ -664,3 +664,8 @@ It works! In this section, we've taken our UI and IB connections and implemented
 We started by retrieving the user's input from the _Bill Amount Text Field_. Next, we used the user's input to calculate bill's tip and total amounts. To finish up, we updated our UI by setting each respective label on our _Output Card_.
 
 In the next section, we'll finish the remaining styling and functionality of our tip calculator!
+
+# Continue to the next section
+
+[Theming](../P6-Theming)
+- [Conclusion](P7-Conclusion)
