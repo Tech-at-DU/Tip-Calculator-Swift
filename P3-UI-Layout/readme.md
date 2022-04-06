@@ -456,3 +456,8 @@ Try running our project on different simulators. You'll notice that our view dyn
 In this section, we learned about how to layout our UI; first with frames and later with _auto-layout_. We learned about constraints and their importance in building dynamic view layouts for multiple devices. And finally, we put our knowledge into practice by implementing a scaffolding for our tip calculator design.
 
 In the next section, we'll build off of our UI by fully implementing and styling each of our UI groups.
+
+# Continue to the next section
+
+[Implementing Subviews](../P4-Implementing-Subviews)
+
