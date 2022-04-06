@@ -392,3 +392,7 @@ This allows us to get feedback on how well the students are grasping the learnin
 # What's Next?
 
 After implementing our theming feature, we've completed our tip calculator's functionality and design! In the next section, we'll review what we've learned and set you on a challenge to practice your new skills.
+
+# Continue to the next section
+
+[Conclusion](../P7-Conclusion)
