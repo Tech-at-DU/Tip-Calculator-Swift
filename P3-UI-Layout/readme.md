@@ -1,7 +1,4 @@
----
-title: "UI Layout"
-slug: ui-layout
----
+# UI Layout
 
 We'll start building our app by implementing the UI in _Interface Builder_. For reference, here are the tip calculator designs:
 
