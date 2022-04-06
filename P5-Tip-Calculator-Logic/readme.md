@@ -668,4 +668,3 @@ In the next section, we'll finish the remaining styling and functionality of our
 # Continue to the next section
 
 [Theming](../P6-Theming)
-- [Conclusion](P7-Conclusion)
