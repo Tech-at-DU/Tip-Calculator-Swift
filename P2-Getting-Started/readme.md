@@ -1,7 +1,4 @@
----
-title: "Getting-Started"
-slug: getting-started
----
+# Getting-Started
 
 In this section, we'll get introduced to our new Xcode project and start working on implementing our tip calculator design.
 
