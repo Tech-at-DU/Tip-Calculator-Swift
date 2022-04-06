@@ -6,7 +6,7 @@ Before we jump into Xcode, we'll first take some time to review and breakdown ou
 
 In this tutorial, we'll often refer to the terms _UI_ (user interface) and _view_. Both terms refer to building the app's user interface, or the visual elements on the screen that the user interacts with.
 
-# Reviewing Our Design
+## Reviewing Our Design
 
 Let's take another look at the designs for the tip calculator app that we're going to build:
 
@@ -24,7 +24,7 @@ The user also can toggle the app's color theme from light-mode to dark-mode usin
 
 We've reviewed our app designs. Next, let's learn to visually breakdown our design into smaller parts.
 
-# Design Breakdown
+## Design Breakdown
 
 Implementing an app design without any planning can be overwhelming. It's hard to know where to start.
 
@@ -234,3 +234,8 @@ You don't need to memorize all of the UIKit objects we've just covered. Just rem
 We've reviewed and learned about many new UI objects in `UIKit`. You'll use these objects as basic building blocks for creating various UI for your app. If you're ever looking for a comprehensive guide of all of the UIKit objects, you can reference Apple's developer docs by [clicking here](https://developer.apple.com/documentation/uikit/views_and_controls).
 
 Moving forward, we'll start building tip calculator in Xcode and look at how to use each of these UI components.
+
+# Continue to the next section
+
+- [Getting Started](../P2-Getting-Started)
+
