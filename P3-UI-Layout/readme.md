@@ -19,23 +19,22 @@ Next, add a `UIView` and reposition/resize it to be your header view.
 > [action]
 Create a header view by dragging an `UIView` object from the _Object Library_ to the top of the view controller. Don't worry too much about the perfect size and position for now. We'll handle that later.
 >
-![ms-video](assets/add_custom_nav_bar.mov)
+![ms-video](assets/add_custom_nav_bar.gif)
 
-The new `UIView` object that we just added is going to be our custom header view. We'll add other subviews onto it later.
+The new `UIView` object that we just added is going to be our custom header view. You will add other subviews to this view later.
 
-You might notice, that our header view is a little hard to see because it's the same color as the view controller's root view: white. Let's change the color of our root view to add some contrast.
+You might notice, that our header view is a little hard to see because it's the same color as the view controller's root view: white. Change the color of the root view to add some contrast.
 
-> [action]
-Change the view controller's root view to off-white:
+> [action] Change the view controller's root view to off-white:
 >
-1. Select the view controller's root view by either clicking on it in your storyboard or selecting it in the document outline. If you don't see it in the _Document Outline_, you might have to expand the `View Controller Scene` tree. Make sure you're not selecting the header view by accident. ![Select Root View](assets/select_root_view.png)
-1. With the root view still selected, open the _Attributes Inspector_ in the _Utilities area_. ![Open Attributes Inspector](assets/open_attributes_inspector.png)
-1. Next, click on the blue dropdown button beside the active color for the `Background Color` field. ![Click Background Color Dropdown](assets/click_bg_color_dropdown.png)
-1. Finally, select the `Off-White` color under the _Named Colors_ subheader in the dropdown menu. ![Select Off-White Background Color](assets/select_off_white.png)
+> 1. Select the view controller's root view by either clicking on it in your storyboard or selecting it in the document outline. If you don't see it in the _Document Outline_, you might have to expand the `View Controller Scene` tree. Make sure you're not selecting the header view by accident. ![Select Root View](assets/select_root_view.png)
+> 1. With the root view still selected, open the _Attributes Inspector_ in the _Utilities area_. ![Open Attributes Inspector](assets/open_attributes_inspector.png)
+> 1. Next, click on the blue dropdown button beside the active color for the `Background Color` field. ![Click Background Color Dropdown](assets/click_bg_color_dropdown.png)
+> 1. Finally, select the `Off-White` color under the _Named Colors_ subheader in the dropdown menu (you may have to scroll to find this.) ![Select Off-White Background Color](assets/select_off_white.png)
 
 We've changed the _background color_ attribute of the root view to a different color. The `Off White` color we chose was pre-defined in our `Assets.xcasset` asset catalog.
 
-Before we add more views or configure more properties, let's learn about the iOS coordinate system and the frame attribute of `UIView` and it's subclasses. We'll need to learn about the iOS coordinate system to properly position and size our views.
+Before you add more views or configure more properties, let's learn about the iOS coordinate system and the frame attribute of `UIView` and it's subclasses. You need to learn about the iOS coordinate system to properly position and size our views.
 
 # iOS Coordinate System
 
@@ -43,69 +42,108 @@ You can think of your phone screen as a coordinate system with it's origin in th
 
 ![iOS Coordinate System](assets/ios_coord_system.png)
 
-As we've previously discussed, view can be represented as rectangles drawn on our device's screen. This rectangle can be represented by it's starting point (top-left corner of the rectangle) along with it's size (width and height). Let's look at an example:
+As was previously discussed, a view can be represented as rectangles drawn on your device's screen. This rectangle can be represented by it's starting point (top-left corner of the rectangle) along with it's size (width and height). Let's look at an example:
 
 ![Coord Example](assets/coord_example.png)
 
 <!-- break -->
 
-> [challenge]
-In the image above, what is the red view's starting point? What about it's size?
+> [challenge] In the image above, what is the red view's starting point? What about it's size?
 
 <!-- break -->
 
-> [solution]
-As you can see from the numbered X and Y axis, the view rectangle starts at the point (27, 48) in the iOS coordinate system and has a width of 50pts and a height of 35pts.
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 
-In Swift, we have the `CGPoint` and `CGSize` data types to represent coordinate points and sizes respectively. A `CGPoint` value is a pair of X and Y values. A `CGSize` value is a pair of width and height values.
+
+> [solution] Look carefully at the numbered X and Y axis, the upper left croner of the view rectangle starts at the point (27, 48) in the iOS coordinate system and has a width of 50pts and a height of 35pts.
+
+In Swift, you use the `CGPoint` and `CGSize` data types to represent coordinate points and sizes respectively. A `CGPoint` value is a pair of X and Y values. A `CGSize` value is a pair of width and height values.
 
 Additionally, these two data types can be combined into `CGRect` data type (X, Y, width, height) that represents a rectangle represented by it's point and size properties.
 
 Each `UIView` has a property called it's `frame` of type `CGRect`. You can use each view's frame property to manipulate it's position and size.
 
-> [info]
-At some point, you'll come across another view property named `bounds` that's also a `CGRect`. The `frame` of a view represents the view's rectangle in it's super view's coordinate system while it's `bound` property refers to the rectangle using the view's top-left corner as the origin of it's coordinate system. In other words, the `bounds` property of a view will always have an (x, y) of (0, 0) and retain it's size.
->
+> [info] At some point, you'll come across another view property named `bounds` this is also a `CGRect`. The `frame` of a view represents the view's rectangle in it's super view's coordinate system while it's `bound` property refers to the rectangle using the view's top-left corner as the origin of it's coordinate system. In other words, the `bounds` property of a view will always have an (x, y) of (0, 0) and retain it's size.
+
 ![Frame vs Bounds](assets/frame_vs_bounds.png)
 
-With our new knowledge, let's properly re-position and re-size our header view.
+With this new knowledge, you can properly re-position and re-size the header view.
 
 ## Setting The Header View Rect
 
 Looking back at our design, we can determine the `CGRect` of our header view.
 
-> [challenge]
-What should the `CGRect` (x, y, width, height) of our header view be?
->
+> [challenge] What should the `CGRect` (x, y, width, height) of our header view be?
+
 ![Header View Dimensions](assets/nav_bar_dimensions.png)
 
 <!-- break -->
 
-> [solution]
-The _frame_ of our header view is (0, 0, 375, 105).
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 
-Let's change our current header view's frame in storyboard.
+> [solution] The _frame_ of our header view is (0, 0, 375, 105).
 
-> [action]
-In `Main.storyboard` perform the following:
+> [action] In `Main.storyboard` perform the following steps:
 >
-1. Select the header view (UIView) in _Interface Builder_
-1. With the header view selected, open the _Size Inspector_ in the _Utilities area_.
-1. Find the view's `Frame Rectangle` fields. Change the X, Y, Width and Height values in the size inspector to the value of the rect in the solution above.
->
+> 1. Select the header view (UIView) in _Interface Builder_
+> 2. With the header view selected, open the _Size Inspector_ in the _Utilities area_.
+> 3. Find the view's `Frame Rectangle` fields. Change the X, Y, Width and Height values in the size inspector to the value of the rect in the solution above.
+
 ![Fixed Header View](assets/fix_nav_bar_rect.png)
->
+
 Let's see if our changes worked! Build and run the app in the iPhone 8 simulator by clicking the run button in the toolbar.
 
 You should see the custom header view against your off-white root view in the simulator. Nothing fancy yet!
 
 ![Fixed Header Simulator](assets/fixed_nav_bar_simulator.png)
 
-But what happens if we run our app in a simulator with a different size screen?
+Looking carefully you may see a gap on one side. The problem is that the dimensions of the phone in the simulator may not match the dimensions used for the mock up in storyboard. 
+
+**Its not possible to fix this by resizing the header view in storyboard!** You want your app to run any phone but all phones models have different screen sizes. 
 
 # Handling Different Screen Sizes
 
-Let's revisit our previous diagram explaining a view's frame within the iOS coordinate system.
+Let's revisit the previous diagram explaining a view's frame within the iOS coordinate system.
 
 ![Header View Dimensions](assets/nav_bar_dimensions.png)
 
@@ -115,26 +153,20 @@ What would happen if our app was ran across multiple different screen sizes?
 
 As you can see, the frame of the `UIView` needs to be different for each device with a different screen size.
 
-> [challenge]
-Can you think of some ways of how we could solve this problem?
-
 ## Introducing Auto-Layout
-
-One way we could solve different frames for each screen size is by programmatically calculating and setting each view's frame. However, that would be super messy and lead to us having to write a lot of code just make sure each view is the right size for each screen.
 
 To solve this problem, Apple created a relative positioning tool called _Auto-Layout_. With _Auto-Layout_, we define constraints.
 
 Constraints are rules where you can define the relative positioning or size between two views. _Auto-Layout_ will then calculate all the math and set our view's frame so that all of the constraints (rules) are followed. This allows us to build dynamic view layouts that re-position and re-shape for any screen size.
 
-For example, we could give our example view the following constraints:
+For example, you could give your example view the following constraints:
 
 - Top: 20pts from Super View (Root View) Top Edge
 - Leading (Left): 40pts from  Super View (Root View) Leading Edge
 - Trailing (Right): -80pts from  Super View (Root View) Trailing Edge
 - Bottom: -380pts from bottom
 
-> [info]
-Note the positive and negative values that are based on the direction of the iOS coordinate system.
+> [info] Note the positive and negative values that are based on the direction of the iOS coordinate system.
 
 ![Constraints Example](assets/constraints_example.png)
 
@@ -144,7 +176,7 @@ Now if the screen changes, let's see how our view will react:
 
 See how auto-layout calculates the view's frame based on our constraints for each different screen size?
 
-If instead, we wanted give the view a fixed width or height, we can also add constraints as fixed constants. Let's give our example view a new set of constraints:
+If instead, you wanted give the view a fixed width or height, you can also add constraints as fixed constants. Give your example view a new set of constraints:
 
 - Top: 20pts from Super View (Root View) Top Edge
 - Leading (Left): 40pts from  Super View (Root View) Leading Edge
@@ -157,20 +189,41 @@ Auto-layout and constraints give us an easy way to build dynamic view layouts fo
 
 ## Determining Constraints
 
-Let's set our first constraints by changing our header view in _Interface Builder_ to make use of constraints.
+Set your first constraints by changing your header view in _Interface Builder_ to make use of constraints.
 
-> [challenge]
-What constraints should we set for our header view? ![Header View Dimensions](assets/nav_bar_dimensions.png)
+> [challenge] What constraints should we set for our header view? ![Header View Dimensions](assets/nav_bar_dimensions.png)
 
 <!-- break -->
 
-> [solution]
-Our header view would have the following constraints:
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+
+> [solution] The header view would have the following constraints:
 >
-- Top: 0 from Super View (Root View) Top Edge
-- Leading (Left): 0 from Super View (Root View) Leading Edge
-- Trailing (Right): 0 from Super View (Root View) Trailing Edge
-- Height: 105 fixed constant
+> - Top: 0 from Super View (Root View) Top Edge
+> - Leading (Left): 0 from Super View (Root View) Leading Edge
+> - Trailing (Right): 0 from Super View (Root View) Trailing Edge
+> - Height: 105 fixed constant
 
 Looks pretty good. Let's look at our header view with these constraints across each device:
 
@@ -190,30 +243,28 @@ The _Safe Area_ provides us with valuable layout information to help us properly
 
 ![Safe Area](assets/safe_area.png)
 
-Revise our original constraints, we'll need to replace our height constraint with a bottom constraint that is -85 from the top _Safe Area_. Now our header view dynamically calculate it's layout correctly across each device.
+Revise our original constraints, you need to replace the height constraint with a bottom constraint that is -85 from the top _Safe Area_. Now our header view dynamically calculate it's layout correctly across each device.
 
 ![Header View Correct Height](assets/nav_bar_correct_height.png)
 
 It might be a little hard to see, but the height of the header view is slightly bigger for the iPhone X because of it's top notch.
 
-With our correct constraints, let's set them in _Interface Builder_.
+With the correct constraints in your head, you can set them in _Interface Builder_.
 
 ## Setting Our First Constraints
 
-Let's set our constraints in _Interface Builder_. First we'll start by adding our top, leading (left) and trailing (right) constraints.
+Set your constraints in _Interface Builder_. Start by adding top, leading (left) and trailing (right) constraints.
 
-> [action]
-Open `Main.storyboard` from your _Project Navigator_. Select your header view (`UIView`) and add the following constraints:
+> [action] Open `Main.storyboard` from your _Project Navigator_. Select your header view (`UIView`) and add the following constraints:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p3_ui_layout/edge_constraints_nav_bar.mp4)
+![ms-video](assets/edge_constraints_nav_bar.gif)
 >
-With our header view selected, we click on the _Add New Constraints_ button and set each of the edge constraints:
->
-- _Top Edge_ of header view 0pts to _Top Edge_ of root view
-- _Leading (Left) Edge_ of header view 0pts to _Leading (Left) Edge_ of root view
-- _Trailing (Right) Edge_ of header view 0pts to _Trailing (Right) Edge_ of root view
+> With your header view selected, click the _Add New Constraints_ button and set each of the edge constraints:
+> - _Top Edge_ of header view 0pts to _Top Edge_ of root view
+> - _Leading (Left) Edge_ of header view 0pts to _Leading (Left) Edge_ of root view
+> - _Trailing (Right) Edge_ of header view 0pts to _Trailing (Right) Edge_ of root view
 
-Currently, our header view has a incomplete set of constraints. We haven't added a constraint to define the view's height yet. If we run the app now, we won't see our header view because it's height will be 0. Xcode and _Interface Builder_ try to warn us of this:
+Currently, your header view has an incomplete set of constraints. You haven't added a constraint to define the view's height yet. If we run the app now, we won't see our header view because it's height will be 0. Xcode and _Interface Builder_ try to warn us of this:
 
 ![Constraint Errors](assets/constraint_errors.png)
 
