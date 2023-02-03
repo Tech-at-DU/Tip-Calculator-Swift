@@ -4,44 +4,61 @@ In the previous section, we implemented a skeleton of each of the UI groups in s
 
 ![Finished UI Skeleton](assets/finished_ui_groups.png)
 
-In this section, we'll finish building each of our _view groups_:
+In this section, you will finish building each of our _view groups_:
 
 1. Header
-1. Tip Input Card
-1. Tip Output Card
-1. Reset Button
+2. Tip Input Card
+3. Tip Output Card
+4. Reset Button
 
-To finish implementing each of our _view groups_, we'll need to the process below:
+To finish implementing each of the _view groups_, you need to the process below:
 
 1. Add each of the correct `UIKit` objects
-1. Identify and set _auto-layout_ constraints for each subview
-1. Configure each subview's attributes to match the designs
-1. Create the appropriate `IBOutlets` and `IBActions`
-
-Let's start by finishing the first UI group: our header.
+2. Identify and set _auto-layout_ constraints for each subview
+3. Configure each subview's attributes to match the designs
+4. Create the appropriate `IBOutlets` and `IBActions`
 
 # Header View
 
-In our previous step, we've already added a base view (`UIView`) for our header. In it's current state, our header view looks like the following:
+In the previous step, you added a base view (`UIView`) for the header. In it's current state, our header view looks like this:
 
 ![Current Header View](assets/current_nav_bar.png)
 
-To finish implementing our header view, we'll need to identify and add the remaining subviews.
+To finish implementing the header view, you need to identify and add the remaining subviews.
 
-> [challenge]
-Using the design below, can you identify the views we'll need to finish building the UI for our header view?
->
+> [challenge] Using the design below, can you identify the views we'll need to finish building the UI for our header view?
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
 ![Header View Design](assets/nav_bar_design.png)
 
 <!-- break -->
 
-> [solution]
-We'll need the following view objects to build our header:
+> [solution] You need the following view objects to build our header:
 >
-- `UILabel`: title label
-- `UISwitch`: theme color switch
+> - `UILabel`: title label
+> - `UISwitch`: theme color switch
 
-After identifying both of the view objects we'll need to add, we'll need to add them and set each of their respective constraints. Let's start with the title label!
+After identifying both of the view objects we'll need to add, we'll need to add them as a subview and set each of their respective constraints.
 
 ## Title Label
 
