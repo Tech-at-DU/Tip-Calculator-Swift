@@ -8,20 +8,18 @@ We'll start building our app by implementing the UI in _Interface Builder_. For 
 
 We'll get started by creating our header view with a `UIView`.
 
-> [info]
-`UIKit` has it's own header-like bar called the `UINavigationBar`. To keep things simple, we'll start from scratch and create our own header view instead of using iOS's `UINavigationBar`.
+> [info] `UIKit` has it's own header-like bar called the `UINavigationBar`. For this app you will start from scratch and create your own header view instead of using the default iOS `UINavigationBar`.
 
 <!-- break -->
 
-> [action]
-Open `Main.storyboard` from your project navigator. You should see your single view controller. ![Starting Storyboard](assets/starting_storyboard.png)
+> [action] Open `Main.storyboard` from your project navigator. You should see your single view controller. ![Starting Storyboard](assets/starting_storyboard.png)
 
-Next, we'll add a `UIView` and reposition/resize it to be our header view.
+Next, add a `UIView` and reposition/resize it to be your header view.
 
 > [action]
 Create a header view by dragging an `UIView` object from the _Object Library_ to the top of the view controller. Don't worry too much about the perfect size and position for now. We'll handle that later.
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p3_ui_layout/add_custom_nav_bar.mp4)
+![ms-video](assets/add_custom_nav_bar.mov)
 
 The new `UIView` object that we just added is going to be our custom header view. We'll add other subviews onto it later.
 
