@@ -454,30 +454,19 @@ By default, our button has a clear background color. To make our reset button ea
 
 ![ms-video](assets/set_reset_button_bg_color.gif)
 
-
-
-
-
-
-
-
-
-
 <!-- break -->
 
-> [info]
-Our _auto-layout_ warning is gone! After adding our reset button and it's constraints, _auto-layout_ can calculate the height of each input/output card using the equal heights constraint.
+> [info] Our _auto-layout_ warning is gone! After adding our reset button and it's constraints, _auto-layout_ can calculate the height of each input/output card using the equal heights constraint.
+> 
+> The view as whole is positioning the header at the top of the safe area and 85px tall, the input view is 24px below that, the output view is 24px below the input view, the button is 24px below the output view and 60px tall. The height of the input and output views (the two center views) are equal so they divide the rest of the available space between them to find their heights. 
 
-We've finished implementing the main view for each of our respective UI groups. For each group, we added the appropriate `UIView` object and set it's corresponding constraints.
-
-Before moving on, let's test that everything looks as expected.
+You've finished implementing the main view for each of the respective UI groups. For each group, you added the appropriate `UIView` object and set it's corresponding constraints.
 
 # Testing Our Constraints
 
 To catch bugs or missteps early, it's always good to build and run your code often. Let's go ahead and do that now to test that our constraints are working correctly.
 
-> [action]
-In the toolbar, click the _Run_ button.
+> [action In the toolbar, click the _Run_ button.
 
 If everything goes as expected, you should see the following in your simulator:
 
@@ -489,9 +478,9 @@ Try running our project on different simulators. You'll notice that our view dyn
 
 ## Conclusion
 
-In this section, we learned about how to layout our UI; first with frames and later with _auto-layout_. We learned about constraints and their importance in building dynamic view layouts for multiple devices. And finally, we put our knowledge into practice by implementing a scaffolding for our tip calculator design.
+In this section, you learned about how to layout our UI; first with frames and later with _auto-layout_. You learned about constraints and their importance in building dynamic view layouts for multiple devices. And finally, you put our knowledge into practice by implementing a scaffolding for our tip calculator design.
 
-In the next section, we'll build off of our UI by fully implementing and styling each of our UI groups.
+In the next section, you will build off of your UI by fully implementing and styling each of our UI groups.
 
 # Continue to the next section
 
