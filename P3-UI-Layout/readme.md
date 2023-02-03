@@ -263,35 +263,30 @@ Set your constraints in _Interface Builder_. Start by adding top, leading (left)
 > - _Top Edge_ of header view 0pts to _Top Edge_ of root view
 > - _Leading (Left) Edge_ of header view 0pts to _Leading (Left) Edge_ of root view
 > - _Trailing (Right) Edge_ of header view 0pts to _Trailing (Right) Edge_ of root view
+> - _Height_ This keeps the height at a fixed size, set it to 85. 
 
 Currently, your header view has an incomplete set of constraints. You haven't added a constraint to define the view's height yet. If we run the app now, we won't see our header view because it's height will be 0. Xcode and _Interface Builder_ try to warn us of this:
 
 ![Constraint Errors](assets/constraint_errors.png)
 
-You'll notice above:
+Notice above:
 
 1. a red error arrow that lists missing constraints in your document outline
 1. red highlights around the custom header view in your storyboard
 1. a warning in the Xcode project status bar
 
-Let's add the final constraint to define the header view's height.
+Add the final constraint to define the header view's height.
 
-> [action]
-Add a constraint from the bottom edge of the header view to the top edge of the _Safe Area_: 
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p3_ui_layout/nav_bar_safe_area_constraint.mp4)
+> [action] Add a constraint from the bottom edge of the header view to the top edge of the _Safe Area_: 
 >
 To add the constraints in the video, follow the steps below:
 >
-1. Select the header view (`UIView`) in the _Document Outline_.
-1. With the header view selected, hold down the control button (ctrl) and click-drag from the header view to the _Safe Area_ view in your _Document Outline_.
->
-![Connecting Safe Area](assets/01_safe-area-constraints.png)
->
-1. Once you let go, you'll see a pop-up with the options to add a new constraint. Select _Vertical Spacing_. This will set a vertical spacing constraint from the top edge of our header view to the top edge of the _Safe Area_. If _Vertical Spacing_ is not available, you can add _Leading Space to Safe Area_, _Top Space to Safe Area_, and  _Trailing Space to Safe Area_ for the same effect. To select multiple constraints at once, _click_ and _hold_ `CMD` while selecting the options.  
->
-![Constraints pop-up](assets/02_constraints-popup.png)
->
-1. (Optional) If you'd like to adjust the constraint, you can click on it and adjust it's values in the _Size Inspector_.
+> 1. Select the header view (`UIView`) in the _Document Outline_.
+> 2. With the header view selected, hold down the control button (ctrl) and click-drag from the header view to the _Safe Area_ view in your _Document Outline_.
+> 3. Once you let go, you'll see a pop-up with the options to add a new constraint. Select _Top Space to Safe Area_. This will set a vertical spacing constraint from the top edge of our header view to the top edge of the _Safe Area_.
+
+![ms-video](assets/nav_bar_safe_area_constraint.gif)
+
 
 ![Constraints pop-up](assets/03_vertical-space-constraints.png)
 
