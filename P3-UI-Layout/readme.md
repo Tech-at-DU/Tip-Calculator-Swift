@@ -287,37 +287,29 @@ To add the constraints in the video, follow the steps below:
 
 ![ms-video](assets/nav_bar_safe_area_constraint.gif)
 
-
-![Constraints pop-up](assets/03_vertical-space-constraints.png)
-
-Congrats, we've added our first set of constraints to our header view. Try running your app in multiple different simulators and see if our header view properly adjusts it's frame to each device.
+Congrats, you've added your first set of constraints to your header view. Try running your app in multiple different simulators and see if our header view properly adjusts it's frame to each device.
 
 ![Auto-Layout Header View Multiple Devices](assets/dynamic_nav_bar_diff_devices.png)
 
 It works! Next, we'll dive deeper into _auto-layout_ and the different kind of constraints that are available to use.
 
-# Different Types of Constraints
-
-To properly setup constraints for our header view, we've only used one type of constraints but there are many different types of constraints that you can use to build complex UI layouts. Before setting up constraints for any of our other views, let's look at common constraints we can use to build dynamic layouts with _auto-layout_.
-
 ## Relative Positioning
 
-First, let's review our relative positioning constraint. Relative positioning allows to position a view relative to another view. For example, we can create a constraint that positions the blue view 45pts from the trailing (right) side of the red view:
+Relative positioning allows you to position a view relative to another view. For example, you might create a constraint that positions the blue view 45pts from the trailing (right) side of the red view:
 
 ![Relative Positioning Positive](assets/relative_positioning_positive.png)
 
-Positive and negative values (relative to the iOS coordinate system) denote the direction of the constraint. For example, we can instead add a constraint that positions the blue view -75pts from the trailing (right) side of the red view:
+Positive and negative values (relative to the iOS coordinate system) denote the direction of the constraint. For example, you can instead add a constraint that positions the blue view -75pts from the trailing (right) side of the red view:
 
 ![Relative Positioning Negative](assets/relative_positioning_negative.png)
 
-> [info]
-When you're creating relative positioning constraints, you'll need to keep in mind which view's edge the constraint is starting from, the other view's edge where the constraint is ending at and the position or negative value (direction) of the constraint.
+> [info] When you're creating relative positioning constraints, you'll need to keep in mind which view's edge the constraint is starting from, the other view's edge where the constraint is ending at and the position or negative value (direction) of the constraint.
 
 When you're setting your relative positioning constraints, make sure you're aware of what they're relative to. For example, let's set the blue view 20pts below the red view:
 
 ![Relative Positioning Top Edge](assets/relative_positioning_top_edge.png)
 
-But is that what we wanted? In the case above, we set our blue view to have a constraint of 20pts below the red view but relative to the wrong edge of the red view!
+But is that what you wanted? In the case above, the blue view had a constraint of 20pts below the red view but relative to the wrong edge of the red view!
 
 This is probably what we really intended:
 
@@ -325,8 +317,7 @@ This is probably what we really intended:
 
 As you can see, it's a very common mistake to accidentally set constraints relative to the wrong edge or sometimes even the wrong view!
 
-> [info]
-It's also important to take the _Safe Area_ into consideration when setting a view relative to the root view. If you're setting the top edge of your view to the top edge of the root view, you'll need to verify that you don't accidentally set it to the top edge of the _Safe Area_ instead, or vice versa.
+> [info] It's also important to take the _Safe Area_ into consideration when setting a view relative to the root view. If you're setting the top edge of your view to the top edge of the root view, you'll need to verify that you don't accidentally set it to the top edge of the _Safe Area_ instead, or vice versa.
 
 ## Constant Size (Height or Width)
 
@@ -336,10 +327,9 @@ As we briefly discussed earlier, it's also possible to set fixed constant constr
 
 In this case, the red view will always remain the same size (100x100) regardless of changing screen sizes.
 
-> [info]
-If you run into a situation where you've added your constraints but don't see your view, you might have forgotten to add certain constraints. Remember, each view's frame must be able to be determined by it's auto-layout constraints.
+> [info] If you run into a situation where you've added your constraints but don't see your view, you might have forgotten to add certain constraints. Remember, each view's frame must be able to be determined by it's auto-layout constraints.
 >
-In the previous example, if we forgot to add the height constraint, our view wouldn't show up because the height of it's frame is 0.
+> In the previous example, if we forgot to add the height constraint, our view wouldn't show up because the height of it's frame is 0.
 
 ## Center (With Offset) In Superview
 
@@ -389,87 +379,89 @@ With our header complete, let's move on to implementing the tip input card.
 
 ### Input Card View
 
-> [action]
-Open `Main.storyboard`. Add a new `UIView` and set the following constraints:
->
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p3_ui_layout/add_input_card_w_constraints.mp4)
+> [action] Open `Main.storyboard`. Add a new `UIView` and set the following constraints:
 >
 Step by step:
 >
-1. Drag a `UIView` from the _Object Library_ onto the root view.
-1. Click the `Add New Constraints` button at the bottom right corner of the _Interface Builder Editor_ window.
-1. Set the following constraints:
+> 1. Drag a `UIView` from the _Object Library_ onto the root view.
+> 1. Click the `Add New Constraints` button at the bottom right corner of the _Interface Builder Editor_ window.
+> 1. Set the following constraints:
     - (Input Card) _Top Edge_ 24pts from Header View _Bottom Edge_
     - (Input Card) _Leading (Left) Edge_ 15pts from Super View (Root View) _Leading (Left) Edge_
     - (Input Card) _Trailing (Right) Edge_ 15pts from Super View _Trailing (Right) Edge_
 
-At this point, you'll see an _auto-layout_ error because your new (input card) view is missing a height constraint. Ignore this warning for now, we'll fix this soon.
+![ms-video](assets/add_input_card_w_constraints.gif)
 
-Next, we'll add our output card and it's constraints.
+At this point, you'll see an _auto-layout_ error because your new (input card) view is missing a height constraint. Ignore this warning for now, we'll fix this soon.
 
 ### Output Card View
 
-> [action]
-In storyboard, add a new `UIView` and set the following constraints:
->
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p3_ui_layout/add_output_card_w_constraints.mp4)
+> [action] In storyboard, add a new `UIView` and set the following constraints:
 >
 Step by step:
 >
-1. Drag a `UIView` from the _Object Library_ onto the view controller's root view, below the input card.
-1. Click the `Add New Constraints` button at the bottom right corner of the _Interface Builder Editor_ window.
-1. Set the following constraints:
+> 1. Drag a `UIView` from the _Object Library_ onto the view controller's root view, below the input card.
+> 1. Click the `Add New Constraints` button at the bottom right corner of the _Interface Builder Editor_ window.
+> 1. Set the following constraints:
     - (Output Card) _Top Edge_ 24pts from Input Card _Bottom Edge_
     - (Output Card) _Leading Edge_ 15pts from Super View _Leading Edge_
     - (Output Card) _Trailing Edge_ 15pts from Super View _Trailing Edge_
 
-We'll also add an equal height constraints between both input and output card views.
+![ms-video](assets/add_output_card_w_constraints.gif)
 
-> [action]
-Add an equal heights constraint between both input and output cards:
->
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p3_ui_layout/add_cards_equal_height_constraint.mp4)
+Now add an equal height constraints between both input and output card views. 
+
+> [action] Add an equal heights constraint between both input and output cards:
 >
 Step by step:
 >
-1. Select the output card view.
-1. With the output card selected, hold down shift and then click on the input card view. This will allow you to select both card views.
-1. Click the `Add New Constraints` button at the bottom right corner of the _Interface Builder Editor_ window.
-1. In the popup prompt, select `Equal Heights` and add the selected constraint.
+> 1. Select the output card view.
+> 1. With the output card selected, hold down shift and then click on the input card view. This will allow you to select both card views.
+> 1. Click the `Add New Constraints` button at the bottom right corner of the _Interface Builder Editor_ window.
+> 1. In the popup prompt, select `Equal Heights` and add the selected constraint.
 
-Xcode should still show an _auto-layout_ error because we haven't added enough constraints for it determine the height of each card view. Ignore this warning for now, this will be fixed once we add our reset button.
+![ms-video](assets/add_cards_equal_height_constraint.gif)
+
+Xcode should still show an _auto-layout_ error because we haven't added enough constraints for it determine the height of each card view. Ignore this warning for now, this will be fixed once we add the reset button.
 
 ### Reset Button
 
-> [action]
-In storyboard, add a new `UIButton` and set the following constraints:
+> [action] In storyboard, add a new `UIButton` and set the following constraints:
+> 
+> Step-by-step:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p3_ui_layout/add_reset_button_w_constraints.mp4)
->
-Step-by-step:
->
-1. Drag a `UIButton` from the _Object Library_ onto the view controller's root view, below the output card.
-1. Click the `Add New Constraints` button at the bottom right corner of the _Interface Builder Editor_ window.
-1. Set the following constraints:
+> 1. Drag a `UIButton` from the _Object Library_ onto the view controller's root view, below the output card.
+> 1. Click the `Add New Constraints` button at the bottom right corner of the _Interface Builder Editor_ window.
+> 1. Set the following constraints:
     - (Reset Button) _Top Edge_ 24pts from Output Card _Bottom Edge_
     - (Reset Button) _Leading Edge_ 15pts from Super View _Leading Edge_
     - (Reset Button) _Trailing Edge_ 15pts from Super View _Trailing Edge_
     - (Reset Button) _Bottom Edge_ 24pts from Super View _Bottom Edge_
     - (Reset Button) _Height_ of 60pts
 
+![ms-video](assets/add_reset_button_w_constraints.gif)
+
 By default, our button has a clear background color. To make our reset button easier to see, let's change it's background color from `Clear` to `tcDarkBlue`.
 
-> [action]
-Change the _Background color_ of the reset button:
+> [action] Change the _Background color_ of the reset button:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p3_ui_layout/set_reset_button_bg_color.mp4)
+> Step-by-step:
 >
-Step-by-step:
->
-1. Select the _Reset Button_.
-1. With the _Reset Button_ selected, navigate to the _Attributes Inspector_ in the _Utilities area_.
-1. Scroll down until you find the `Background` field. This field allows you to set the button's background color.
-1. Locate the blue dropdown button and set the button's background color from `Clear` to `tcDarkBlue`.
+> 1. Select the _Reset Button_.
+> 1. With the _Reset Button_ selected, navigate to the _Attributes Inspector_ in the _Utilities area_.
+> 1. Scroll down until you find the `Background` field. This field allows you to set the button's background color.
+> 1. Locate the blue dropdown button and set the button's background color from `Clear` to `tcDarkBlue`.
+
+![ms-video](assets/set_reset_button_bg_color.gif)
+
+
+
+
+
+
+
+
+
 
 <!-- break -->
 
