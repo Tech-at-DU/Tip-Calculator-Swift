@@ -64,56 +64,67 @@ After identifying both of the view objects we'll need to add, we'll need to add 
 
 ### Identifying Constraints
 
-Before we starting adding constraints in storyboard, let's take a step back and think of all the constraints we'll need for our title label.
+Before adding constraints in storyboard, take a step back and think of all the constraints  needed for the title label.
 
-> [challenge]
-Using the design below, identify each of the _auto-layout_ constraints for your title label. Write each of the constraints down on a sheet of paper.
+> [challenge] Using the design below, identify each of the _auto-layout_ constraints for your title label. Write each of the constraints down on a sheet of paper.
 >
-Hint: the red area represents the frame of the label.
->
+> **Hint:** the red area represents the frame of the label.
+
 ![Header View Label Dimensions](assets/nav_bar_label_dimensions.png)
 
 Check your answer with the solution below.
 
-> [solution]
-Based on our design, our label will need the following constraints:
->
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+
+> [solution] Based on our design, our label will need the following constraints:
+
 ![Header View Label Constraints](assets/nav_bar_label_constraints.png)
->
+
+
 **Constraints**:
->
 - (Label) Leading Edge 24pts from Super View (Header View) Leading Edge
 - (Label) Bottom Edge 0pts from Super View Bottom Edge
 - (Label) Top Edge 0pts from Safe Area Top Edge
 
 ### Adding Constraints
 
-After identifying our constraints, we can use _Interface Builder_ to add our new `UILabel` and it's constraints.
+After identifying our constraints, use _Interface Builder_ to add a new `UILabel` and apply constraints.
 
-> [action]
-Open `Main.storyboard` and implement your title label and it's constraints:
+> [action] Open `Main.storyboard` and implement your title label and it's constraints:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/add_nav_bar_label_w_constraints.mp4)
+> Step-by-step:
 >
-Step-by-step:
->
-1. Drag a `UILabel` from the _Object Library_ and drop it on top of your header view (`UIView`).
-1. With your new `UILabel` selected, click the `Add New Constraints` button.
-1. Add the following first two constraints using the `Add New Constraints` popup:
-    - (Label) Leading Edge 24pts from Super View Leading Edge
-    - (Label) Bottom Edge 0pts from Super View Bottom Edge
-1. To add the final constraint, select your `UILabel` in the _Document Outline_.
-1. With your `UILabel` selected, hold control (ctrl) and click-drag to the _Safe Area_ object in the _Document Outline_.
-1. You should see a popup to add a new constraint. Select `Vertical Spacing`. Wait a second, our new `Vertical Spacing` constraint isn't not properly configured.
-1. Hover over the new `Vertical Spacing` and click on it. You should see it's attributes appear in the _Attributes Inspector_.
-1. In the _Attributes Inspector_, change the constraint's attributes:
-    - _Second Item_: Change from `Label.Bottom` to `Top`
-    - _Constant_: Change from `-85` to `0`
+> 1. Drag a `UILabel` from the _Object Library_ and drop it on top of your header view (`UIView`). It should be a child of the header view. You can check this in the outline view on the left side. 
+> 2. With your new `UILabel` selected, click the `Add New Constraints` button.
+> 3. Add the following first two constraints using the `Add New Constraints`. 
+    - (Label) Leading Edge 24pts from Super view
+> 4. Click the align menu (to the left of the Add constraints button) check `Vertically in container`. This aligns the label in the vertical center of it's container.  
+
+![ms-video](assets/add_nav_bar_label_w_constraints.gif)
 
 <!-- break -->
 
-> [info]
-Identifying and setting the _auto-layout_ constraints for each view object can be tricky for newbies. If you find yourself struggling, slow down and try to break down your layout problem into smaller chunks. As you continue to practice, working with constraints will become easier and easier.
+> [info] Identifying and setting the _auto-layout_ constraints for each view object can be tricky. If you find yourself struggling, slow down and try to break down your layout problem into smaller chunks. As you continue to practice, working with constraints will become easier and easier.
 
 Nice! We've added a title label to our header. If you build and run your project, you'll see the following:
 
@@ -121,16 +132,13 @@ Nice! We've added a title label to our header. If you build and run your project
 
 But... it's still off. Our title label still doesn't look like our final design.
 
-That's because we'll need to use the _Attribute Inspector_ to set the `UILabel` attributes to match our designs.
-
 ### Configuring Attributes
 
-> [action]
-In `Main.storyboard`, select your header view's title label. Navigate to the _Attributes Inspector_ in the _Utilities area_ and change the following attributes:
+> [action] In `Main.storyboard`, select your header view's title label. Navigate to the _Attributes Inspector_ in the _Utilities area_ and change the following attributes:
 >
-- _Text_: Change from `Label` to `Tip Calculator` ![Set Header View Label Text](assets/set_nav_bar_label_text.png)
-- _Font_: Change from `System 17.0` to `System Bold 24.0` ![Set Header View Label Font](assets/set_nav_bar_label_font.png)
-- _Font Color_: Use the blue dropdown to change from `Default` to `tcCharcoal` ![Set Header View Text Color](assets/set_nav_bar_label_text_color.png)
+> - _Text_: Change from `Label` to `Tip Calculator` ![Set Header View Label Text](assets/set_nav_bar_label_text.png)
+> - _Font_: Change from `System 17.0` to `System Bold 24.0` ![Set Header View Label Font](assets/set_nav_bar_label_font.png)
+> - _Font Color_: Use the blue dropdown to change from `Default` to `tcCharcoal` ![Set Header View Text Color](assets/set_nav_bar_label_text_color.png)
 
 After configuring each of the attributes above, your title label should look like the following:
 
@@ -142,60 +150,72 @@ Looks pretty good huh? Let's move on to our `UISwitch`.
 
 Identify constraints. Add object and set constraints. Configure attributes. Rinse. Repeat.
 
-We'll going to repeat this process many times before this tutorial is over. Get used to this, as it's the same process you'll need to use if when you're building your own apps.
+You are going to repeat this process many times before this tutorial is over. Get comfortable with this, as it's the same process you'll need to use if when you're building your own apps.
 
 Let's start by identifying the constraints needed for our `UISwitch`.
 
 ### Identifying Constraints
 
-> [challenge]
-Using the design below, identify each of the _auto-layout_ constraints for your theme switch. Write each of the constraints down on a sheet of paper.
+> [challenge] Using the design below, identify each of the _auto-layout_ constraints for your theme switch. Write each of the constraints down on a sheet of paper.
 >
-Hint: the red area represents the frame of the switch.
->
+> Hint: the red area represents the frame of the switch.
+
 ![Header View Switch Dimensions](assets/nav_bar_switch_dimensions.png)
 
 Check your answer with the solution below.
 
-> [solution]
-Based on our design, our `UISwitch` will need the following constraints:
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+> [solution] Based on our design, our `UISwitch` will need the following constraints:
 >
 ![Header View Switch With Constraints](assets/nav_bar_switch_constraints.png)
 >
 **Constraints**:
 >
-- (Switch) Trailing Edge 24pts from Super View (Header View) Trailing Edge
-- (Switch) Leading Edge ≥20pts from Label Trailing Edge
-- (Switch) Center vertically aligned with Label Center
+> - (Switch) Trailing Edge 24pts from Super View (Header View) Trailing Edge
+> - (Switch) Leading Edge ≥20pts from Label Trailing Edge
+> - (Switch) Center vertically aligned with Label Center
 
 ### Adding Constraints
 
-Let's go ahead and add these constraints to our `UISwitch`.
+Go ahead add a `UISwitch` and add these constraints.
 
-> [action]
-Open `Main.storyboard` and implement your `UISwitch` and it's constraints:
+> [action] Open `Main.storyboard` and implement your `UISwitch` and it's constraints:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/add_switch_w_constraints.mp4)
+> Step-by-step:
 >
-Step-by-step:
->
-1. Drag a `UISwitch` from the _Object Library_ and drop it next to your header title label.
-1. With your  `UISwitch` selected, click the `Add New Constraints` button.
-1. Add the following two constraints using the `Add New Constraints` popup:
+1. Drag a `UISwitch` from the _Object Library_ and drop it "into" to your header view.
+2. With your  `UISwitch` selected, click the `Add New Constraints` button.
+3. Add the following two constraints using the `Add New Constraints` popup:
     - (Switch) Trailing Edge 24pts from Super View Trailing Edge
-    - (Switch) Leading Edge 20pts from Label Trailing Edge
-1. Hover over the switch's leading edge constraint to the label and click on it. You should see it's attributes appear in the _Attributes Inspector_.
-1. Using the _Attributes Inspector_, change the constraint's _Relation_ attribute from `Equal` to `Greater Than or Equal`.
-1. Click on the `UISwitch` to select it again. Make sure you're not selecting the constraint from the previous step.
-1. With your switch selected, hold control (ctrl) and click-drag from the `UISwitch` to the `UILabel`.
-1. You should see a popup to add a new constraint. Select `Center Vertically` to vertically align your switch's center to the label's center.
+4. Click the Align button (to the left of Add Constraints) and check "Vertically in container"
 
-Nice! We've added and set our constraints for our `UISwitch`. Now, let's configure the switch's attributes.
+![ms-video](assets/add_switch_w_constraints.gif)
+
+Nice! you added and set the constraints to space the `UISwitch` from the left edge and align it vertically in it's parent view. Now,configure the switch's attributes.
 
 ### Configuring Attributes
 
-> [action]
-In `Main.storyboard`, select your header view's switch. Navigate to the _Attributes Inspector_ in the _Utilities area_ and change the following attributes:
+> [action] In `Main.storyboard`, select your header view's switch. Navigate to the _Attributes Inspector_ in the _Utilities area_ and change the following attributes:
 >
 ![Switch Attributes](assets/switch_attrs.png)
 >
@@ -210,98 +230,114 @@ When you're done, your custom header view should look like the following:
 
 ## Adding Our IB Connections
 
-We're almost finished with implementing our first UI group! To finish up, we'll need to create our `IBOutlets` and `IBActions`.
+Almost finished with implementing the first UI group! To finish up, you need to create `IBOutlets` and `IBActions`.
 
 `IBOutlets` and `IBActions` allow our Swift code receive events and interact with our storyboard views.
 
-`IBOutlets` create an instance variable that we can reference in our Swift code. This allows us interact with our title label and switch programmatically.
+`IBOutlets` create an instance variable that can be referenced in Swift code. This way you can control UI elements created in storyboard. 
 
 `IBActions` create a function that will execute code when triggered. These functions are triggered by user interaction with your UI elements. A common example is a user tapping a button. When the button is tapped, it triggers an `IBAction` that will run any code within it's corresponding function.
 
-We'll need both of these connections later to implement our tip calculator logic.
+You need both of these connections to implement the tip calculator logic.
 
-Let's get started by creating our first `IBOutlet` for our header view (`UIView`).
+Get started by creating our first `IBOutlet` for our header view (`UIView`).
 
-> [action]
-Open your `Main.storyboard` and `ViewController.swift` files side-by-side using the _Assistant Editor_:
+> [action] Open your `Main.storyboard` and `ViewController.swift` files side-by-side using the _Assistant Editor_:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/using_assistant_editor.mp4)
+> To create IB connections, we'll need to first open our storyboard and view controller source code side-by-side:
 >
-To create IB connections, we'll need to first open our storyboard and view controller source code side-by-side:
->
-1. Open your `Main.storyboard` in your main editor.
-1. Hold down the option button and click on `ViewController.swift` file in your _Project Navigator_. This will open your view controller in your _Assistant Editor_.
-1. (Optional) Use your Xcode toolbar to hide the _Utilities area_ to create more space in your project.
+> 1. Open your `Main.storyboard` in your main editor.
+> 2. Hold down the option button and click on `ViewController.swift` file in your _Project Navigator_. This will open your view controller in your _Assistant Editor_.
+> 3. (Optional) Use your Xcode toolbar to hide the _Utilities area_ to create more space in your project.
 
-With our `Main.storyboard` and `ViewController.swift` files side-by-side, let's create an `IBOutlet` for our header.
+![ms-video](assets/using_assistant_editor.gif)
 
-> [action]
-Create an `IBOutlet` for your header called `headerView`:
+With our `Main.storyboard` and `ViewController.swift` files side-by-side, create an `IBOutlet` for our header.
+
+> [action] Create an `IBOutlet` for your header called `headerView`:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/header_view_iboutlet.mp4)
+> Step-by-step:
 >
-Step-by-step:
->
-1. Select your header view (`UIView`) in the _Document Outline_.
-1. With your header view selected, hold down ctrl and click-drag from the header view in your _Document Outline_ to your Swift code within the `ViewController` class definition.
-1. You should see a popup for creating a new IB connection. Set the name field as `headerView`.
-1. Click _Connect_ to create your new `IBOutlet`.
+> 1. Select your header view (`UIView`) in the _Document Outline_.
+> 2. With your header view selected, hold down ctrl and click-drag from the header view in your _Document Outline_ to your Swift code within the `ViewController` class definition.
+> 3. You should see a popup for creating a new IB connection. Set the name field as `headerView`.
+> 4. Click _Connect_ to create your new `IBOutlet`.
+
+![ms-video](assets/header_view_iboutlet.gif)
 
 You should see a new `IBOutlet` instance variable in your `ViewController` class:
 
-```
+```Swift
 class ViewController: UIViewController {
 
-    @IBOutlet weak var headerView: UIView!
+  @IBOutlet weak var headerView: UIView!
 
-    // MARK: - View Lifecycle
+  // MARK: - View Lifecycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
 }
 ```
 
-As you can see, we can now reference our header view as `headerView` in our Swift code.
+With new variable you can now reference the header view as `headerView` in your Swift code.
 
 Awesome! Repetition is the mother of learning. Let's do it again.
 
-> [action]
-Create an `IBOutlet` for your header view's title label called `titleLabel`:
+> [action] Create an `IBOutlet` for your header view's title label called `titleLabel`:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/title_label_iboutlet.mp4)
->
-Step-by-step:
+> Step-by-step:
 >
 1. Select your title label (`UILabel`) in your storyboard view controller.
 1. With your Tip Calculator label selected, hold down ctrl and click-drag from the label to your Swift code within the `ViewController` class definition.
 1. You should see a popup for creating a new IB connection. Set the name field as `titleLabel`.
 1. Click _Connect_ to create your new `IBOutlet`.
 
+![ms-video](assets/title_label_iboutlet.gif)
+
 <!-- break -->
 
-> [info]
-Notice that last time we created an `IBOutlet` by ctrl-dragged from our header view in the _Document Outline_. This time we created our `IBOutlet` by ctrl-dragged directly from the label's storyboard object. Both ways of creating `IBOutlets` are valid.
+> [info] You can also create an `IBOutlet` by control dragging from the object in the storybaord mock up. 
 
 At this point, we've walked through creating an `IBOutlet` twice. It's your turn.
 
-> [challenge]
-Create an `IBOutlet` for your `UISwitch` named `themeSwitch`. If you get stuck, go back and reference the steps we used to create the previous two `IBOutlets`.
+> [challenge] Create an `IBOutlet` for your `UISwitch` named `themeSwitch`. If you get stuck, go back and reference the steps we used to create the previous two `IBOutlets`.
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 
 <!-- break -->
 
-> [solution]
-After creating an `IBOutlet` for your switch, your `ViewController.swift` file should look like the following:
->
-```
+> [solution] After creating an `IBOutlet` for your switch, your `ViewController.swift` file should look like the following:
+
+
+```Swift 
 class ViewController: UIViewController {
->
+
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var themeSwitch: UISwitch!
->
+
     // MARK: - View Lifecycle
->
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -310,51 +346,48 @@ class ViewController: UIViewController {
 
 After checking your solution, let's move on to creating our first `IBAction`.
 
-We'll need to create an `IBAction` for our switch. This will allow us to execute code each time our switch is toggled from off to on and vice versa.
+Create an `IBAction` for the switch. This will allow you to execute code each time the switch is toggled from off to on and vice versa.
 
-> [action]
-Open both your `Main.storyboard` and `ViewController.swift` file using the _Assistant Editor_. Create a new `IBAction` for your switch:
+> [action] Open both your `Main.storyboard` and `ViewController.swift` file using the _Assistant Editor_. Create a new `IBAction` for your switch:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/switch_ibaction.mp4)
+> Step-by-step:
 >
-Step-by-step:
->
-1. Select your switch (`UISwitch`) in the _Document Outline_.
-1. With your switch selected, hold down ctrl and click-drag from the switch in your _Document Outline_ to your `ViewController` class.
-1. You should see a popup for creating a new IB connection. In the popup, change the _Connection_ type from `Outlet` to `Action`. Changing this property allows us to create a different type of IB connection.
-1. Set the name of our action as `themeToggled`.
-1. Change the _Type_ property from `Any` to `UISwitch`.
-1. Make sure the _Event_ property is set as `Value Changed`. If not, use the dropdown to set it to `Value Changed`.
-1. Click _Connect_ to create your new `IBAction`.
+> 1. Select your switch (`UISwitch`) in the _Document Outline_.
+> 2. With your switch selected, hold down ctrl and click-drag from the switch in your _Document Outline_ to your `ViewController` class.
+> 3. You should see a popup for creating a new IB connection. In the popup, change the _Connection_ type from `Outlet` to `Action`. Changing this property allows us to create a different type of IB connection.
+> 4. Set the name of our action as `themeToggled`.
+> 5. Change the _Type_ property from `Any` to `UISwitch`.
+> 6. Make sure the _Event_ property is set as `Value Changed`. If not, use the dropdown to set it to `Value Changed`.
+> 7. Click _Connect_ to create your new `IBAction`.
+
+
+![ms-video](assets/switch_ibaction.gif)
 
 <!-- break -->
 
-> [info]
-After creating your switch's `IBAction`, you can close the _Assistant Editor_. If don't have a lot of screen space, it's helpful to open and close the _Assistant Editor_ as you need it.
+> [info] After creating your switch's `IBAction`, you can close the _Assistant Editor_. If don't have a lot of screen space, it's helpful to open and close the _Assistant Editor_ as you need it.
 
-Let's give our new `IBAction` a test run to see that it's working correctly.
+Give our new `IBAction` a test run to see that it's working correctly.
 
-> [action]
-Open `ViewController.swift` from your _Project Navigator_ and add the following code in your `themeToggled` function:
->
-```
+> [action] Open `ViewController.swift` from your _Project Navigator_ and add the following code in your `themeToggled` function:
+
+```Swift
 @IBAction func themeToggled(_ sender: UISwitch) {
-    if sender.isOn {
-        print("switch toggled on")
-    } else {
-        print("switch toggled off")
-    }
+  if sender.isOn {
+    print("switch toggled on")
+  } else {
+    print("switch toggled off")
+  }
 }
 ```
 
 After adding the code above we can test our `IBAction`.
 
-> [action]
-Build and run your project. Toggle your switch on and off a couple of times. If you look at your Xcode _Debugger area_ you should see the following print statements in your console each time you toggle your switch:
->
+> [action] Build and run your project. Toggle your switch on and off a couple of times. If you look at your Xcode _Debugger area_ you should see the following print statements in your console each time you toggle your switch:
+
 ![Switch Console Print](assets/switch_console_print.png)
 
-We've finished implementing the UI and IB connections for our header view. Side-by-side, your `Main.storyboard` and `ViewController.swift` files should look like the following:
+You've finished implementing the UI and IB connections for the header view. Side-by-side, your `Main.storyboard` and `ViewController.swift` files should look like the following:
 
 ![Finished Header Project Snapshot](assets/finished_header_project_snapshot.png)
 
@@ -364,68 +397,67 @@ If you build and run your project, you app should look like:
 
 If you're looking for more practice, good news! We'll need to repeat the same steps again for our input card, output card and reset button views. Onwards!
 
-> [info]
-As you get more advanced, you'll learn about creating custom view objects that abstract all of it's subview components. Creating custom views makes your custom views re-usable and decouples your code. This is a little more advanced and out of the scope of this tutorial.
+> [info] As you get more advanced, you'll learn about creating custom view objects that abstract all of it's subview components. Creating custom views makes your custom views re-usable and decouples your code. 
 
 # Input Card View
 
-The next UI group we'll complete is our input card. Let's take another look at our design:
+The next UI group you will complete is the input card. Let's take another look at our design:
 
 ![Input Card Design](assets/input_card_design.png)
 
-For our input card, we'll need to add the following UI components:
+The input card needs the following UI components:
 
 ![Tip Input Subviews](assets/tip_input_subviews.png)
 
-We'll need two labels, a text field, and a segmented control. Next, let's think about how to use _auto-layout_ to build our design.
+The input card needs two labels, a text field, and a segmented control. Think about how to use _auto-layout_ to build this design.
 
 ## Identifying Constraints
 
-To build our header view, we used constraints to create our dynamic view layout. This time, we'll introduce a new tool called `UIStackView`.
+To build our header view, you used constraints to create our dynamic view layout. This time, you you will use a new tool called `UIStackView`.
 
 ### Stack Views
 
-`UIStackView` allows us to create horizontal or vertical stacks of views. This is especially useful for easily organizing rows or columns layouts.
+`UIStackView` allows you to create a horizontal or vertical stack of views. This is especially useful for easily organizing rows or column layouts.
 
-Let's take a look at what that looks like:
+Take a look at what that looks like:
 
 ![Horizontal and Vertical Stack Views](assets/hor_and_ver_stack_views.png)
 
 In both cases, you can see that each stack view contains multiple subviews. The `UIStackView` automatically handles calculating the frame of each subview within it.
 
-We'll use stack views to easily layout our input subviews without having to add the constraints ourselves.
+Use stack views to easily layout subviews without having to add constraints.
 
-Let's look at how we'll use a horizontal stack view to group our first row of views.
+Look at how you will use a horizontal stack view to group our first row of views.
 
 ![Bill Amount Stack View](assets/bill_amount_stack_view.png)
 
-As you can see, both our _Bill Amount Title Label_ and _Bill Amount Text Field_ are added to a single `UIStackView`. The purple area in the image above shows the stack view's frame.
+As you can see, both the _Bill Amount Title Label_ and _Bill Amount Text Field_ are added to a single `UIStackView`. The purple area in the image above shows the stack view's frame.
 
-Similarly, we can use another horizontal stack view to layout our _Tip Percent Title_ and _Tip Segmented Control_ subviews. Let's look at what the would look like:
+Similarly, you can use another horizontal stack view to layout the _Tip Percent Title_ and _Tip Segmented Control_ subviews. Let's look at what the would look like:
 
 ![Tip Percent Stack View](assets/tip_percent_stack_view.png)
 
-Each `UIStackView` calculates the frame of each subview within it. However, we'll still need to somehow define the frame of each `UIStackView`.
+Each `UIStackView` calculates the frame of each subview within it. However, you still need to somehow define the frame of each `UIStackView`.
 
-To position both of our horizontal stack views in the center of our input card, we'll use our existing knowledge of stack views and constraints.
+To position both of our horizontal stack views in the center of your input card, you will apply constraints to the stack views. 
 
-First, we'll add a vertical stack view containing both horizontal stack views:
+First, you will add a vertical stack view containing both horizontal stack views:
 
 ![Outer Stack View](assets/outer_stack_view.png)
 
-Next, we'll use constraints to dynamically center the outer stack view:
+Next, use constraints to dynamically center the outer stack view:
 
 ![Outer Stack View Constraints](assets/outer_stack_view_constraints.png)
 
-We add the following constraints to our outer stack view:
+We add the following constraints to the outer stack view:
 
 - (Outer Stack View) Leading Edge 22pts from Super View (Input Card) Leading Edge
 - (Outer Stack View) Trailing Edge 22pts from Super View Trailing Edge
 - (Outer Stack View) Center vertically aligned with Super View Center
 
-We'll need to add a few more width constraints to guarantee each view is of the correct width.
+You need to add a few more width constraints to guarantee each view is of the correct width.
 
-We'll start by adding an equal width to both inner (horizontal) stack views:
+Start by adding an equal width to both inner (horizontal) stack views:
 
 ![Input Card Equal Widths Constraints](assets/input_card_equal_widths.png)
 
@@ -456,6 +488,16 @@ Now that we've figured how we're going to implement the layout for our input car
 As you can see, the layout for our input card is pretty complex. To make things easier, we'll break our implementation into smaller steps.
 
 We'll start with the inner top stack view: the _Bill Amount Stack View_.
+
+
+
+
+
+
+
+
+
+
 
 ### Bill Amount Stack View
 
