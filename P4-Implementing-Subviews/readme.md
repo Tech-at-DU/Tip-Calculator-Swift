@@ -489,42 +489,30 @@ As you can see, the layout for our input card is pretty complex. To make things 
 
 We'll start with the inner top stack view: the _Bill Amount Stack View_.
 
-
-
-
-
-
-
-
-
-
-
 ### Bill Amount Stack View
 
-First, we'll need to add our stack view's sub-elements.
+First, add the stack view's sub-elements.
 
-> [action]
-In `Main.storyboard`, add an `UILabel` and `UITextField` to your view controller:
+> [action] In `Main.storyboard`, add an `UILabel` and `UITextField` to your view controller:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/add_bill_amount_subviews.mp4)
+> Step-by-step:
 >
-Step-by-step:
->
-1. Drag a `UILabel` from the _Object Library_ and drop it on top of your input card view (`UIView`).
-1. Drag a `UITextField` from the _Object Library_ and position it next to your previous label.
-1. Make sure both subviews are positioned horizontally side-by-side. This will be important when we create our stack view.
+> 1. Drag a `UILabel` from the _Object Library_ and drop it on top of your input card view (`UIView`).
+> 2. Drag a `UITextField` from the _Object Library_ and position it next to your previous label.
+> 3. Make sure both subviews are positioned horizontally side-by-side. This will be important when we create our stack view.
 
-Next, let's create our first `UIStackView` from our two new views.
+![ms-video](assets/add_bill_amount_subviews.gif)
 
-> [action]
-Create the _Bill Amount Stack View_ using the label and textfield:
+Next, create your first `UIStackView` from our two new views.
+
+> [action] Create the _Bill Amount Stack View_ using the label and textfield:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/create_bill_amount_stack_view.mp4)
->
-1. Select your _Bill Amount Title Label_ (`UILabel`) in your storyboard.
-1. Hold down shift and click on your `UITextField`. This allows you to select multiple items at the same time.
-1. With both label and text field selected, click on the `Embed In Stack` button near the `Add New Constraints` button. It's located in the bottom right corner of your _Editor area_.
-1. (Optional) If you look in your _Document Outline_, you can see your new `UIStackView`. If you expand your stack view in your _Document Outline_ you can see each of the stack view's subviews.
+> 1. Select your _Bill Amount Title Label_ (`UILabel`) in your storyboard.
+> 2. Hold down shift and click on your `UITextField`. This allows you to select multiple items at the same time.
+> 3. With both label and text field selected, click on the `Embed In` button near the `Add New Constraints` button. It's located in the bottom right corner of your _Editor area_.
+> 4. (Optional) If you look in your _Document Outline_, you can see your new `UIStackView`. If you expand your stack view in your _Document Outline_ you can see each of the stack view's subviews.
+
+![ms-video](assets/create_bill_amount_stack_view.gif)
 
 Your storyboard should look like the following:
 
@@ -534,136 +522,147 @@ Needs some work huh? We won't worry about the styling yet. Let's move onto creat
 
 ### Tip Percent Stack View
 
-First, we'll add the _Tip Percent Stack View's_ subviews.
+Add the _Tip Percent Stack View's_ subviews.
 
-> [action]
-In `Main.storyboard`, add an `UILabel` and `UISegmentedControl` to your view controller:
+> [action] In `Main.storyboard`, add an `UILabel` and `UISegmentedControl` to your view controller:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/add_tip_percent_subviews.mp4)
+> Step-by-step:
 >
-Step-by-step:
->
-1. Drag a `UILabel` from the _Object Library_ and drop it below the first label.
-1. Drag a `UISegmentedControl` from the _Object Library_ and position it so that it's next to the new label and below the text field.
-1. Make sure both label and segmented control are positioned horizontally side-by-side. In addition, make sure that they're positioned below the previous stack view.
+> 1. Drag a `UILabel` from the _Object Library_ and drop it below the first label.
+> 2. Drag a `UISegmentedControl` from the _Object Library_ and position it so that it's next to the new label and below the text field.
+> 3. Make sure both label and segmented control are positioned horizontally side-by-side. In addition, make sure that they're positioned below the previous stack view.
 
-Now we'll move on to create our second inner stack view.
+![ms-video](assets/add_tip_percent_subviews.gif)
 
-> [action]
-Create the _Tip Percent Stack View_ using the label and segmented control:
+Create our second inner stack view.
+
+> [action] Create the _Tip Percent Stack View_ using the label and segmented control:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/create_tip_percent_stack_view.mp4)
->
-1. Select your _Tip Percent Title Label_ (`UILabel`) in your storyboard.
-1. Hold down shift and click on your `UISegmentedControl`. This allows you to select multiple items at the same time.
-1. With both label and segmented control selected, click on the `Embed In Stack` button near the `Add New Constraints` button. It's located in the bottom right corner of your _Editor area_.
-1. (Optional) If you look in your _Document Outline_, you can see your new `UIStackView`. If you expand your stack view in your _Document Outline_ you can see each of the stack view's subviews.
+> 1. Select your _Tip Percent Title Label_ (`UILabel`) in your storyboard.
+> 2. Hold down shift and click on your `UISegmentedControl`. This allows you to select multiple items at the same time.
+> 3. With both label and segmented control selected, click on the `Embed In Stack` button near the `Add New Constraints` button. It's located in the bottom right corner of your _Editor area_.
+> 4. (Optional) If you look in your _Document Outline_, you can see your new `UIStackView`. If you expand your stack view in your _Document Outline_ you can see each of the stack view's subviews.
+
+![ms-video](assets/create_tip_percent_stack_view.gif)
 
 Your storyboard should look like the following:
 
 ![Tip Percent Stack View Unstyled](assets/tip_percent_stack_view_unstyled.png)
 
-Both stack views should still be unstyled. We'll get to that once we finish adding all our constraints.
+Both stack views are still unstyled. You will get to that once we finish adding all our constraints.
 
 Next, let's create our outer stack view.
 
 ### Outer Stack View
 
-> [action]
-Create the _Outer Stack View_ using both inner (horizontal) stack views:
->
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/create_outer_stack_view.mp4)
+> [action] Create the _Outer Stack View_ using both inner (horizontal) stack views:
 >
 Step-by-step:
 >
-1. Collapse both inner stack views in the _Document Outline_.
-1. Select any inner stack view in the _Document Outline_.
-1. With the previous inner stack view selected, shift-click the other inner stack view to select both inner stack views simultaneously.
-1. With both inner stack views selected, click on the `Embed In Stack` button.
-1. (Optional) If you look in your _Document Outline_, you can see your new outer stack view and it's subviews.
+> 1. Collapse both inner stack views in the _Document Outline_.
+> 2. Select any inner stack view in the _Document Outline_.
+> 3. With the previous inner stack view selected, shift-click the other inner stack view to select both inner stack views simultaneously.
+> 4. With both inner stack views selected, click on the `Embed In Stack` button.
+> 5. (Optional) If you look in your _Document Outline_, you can see your new outer stack view and it's subviews.
+
+![ms-video](assets/create_outer_stack_view.gif)
 
 Your storyboard should now look like the following:
 
 ![Outer Stack View Unstyled](assets/outer_stack_view_unstyled.png)
 
-With our inner and outer stack view constraints created, we'll need to add a few more constraints so _auto-layout_ can determine each stack view's frame.
+With the inner and outer stack view constraints created, you need to add a few more constraints so _auto-layout_ can determine each stack view's frame.
 
-Let's start with remaining outer stack view constraints.
+Start with remaining outer stack view constraints.
 
-> [action]
-Set the outer stack view's frame with the following constraints:
+> [action] Set the outer stack view's frame with the following constraints:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/add_outer_stack_view_constraints.mp4)
+> Step-by-step:
 >
-Step-by-step:
->
-1. Select the outer stack view in the _Document Outline_.
-1. With your outer stack view selected, click the `Add New Constraints` button.
-1. Add the following two constraints using the `Add New Constraints` popup:
+> 1. Select the outer stack view in the _Document Outline_.
+> 2. With your outer stack view selected, click the `Add New Constraints` button.
+> 3. Add the following two constraints using the `Add New Constraints` popup:
     - (Outer Stack View) Leading Edge 22pts from Super View (input card) Leading Edge
     - (Outer Stack View) Trailing Edge 22pts from Super View Trailing Edge
-1. In the _Document Outline_, hold down control (ctrl) and click-drag from the outer stack view to it's super view (input card).
-1. In the popup, select `Center Vertically In Container` to create a new constraint. This will vertically align the outer stack view's center with it's super view's center.
+> 4. In the _Document Outline_, hold down control (ctrl) and click-drag from the outer stack view to it's super view (input card).
+> 5. In the popup, select `Center Vertically In Container` to create a new constraint. This will vertically align the outer stack view's center with it's super view's center.
 
-Next, we'll add our equal width constraints to make sure the width of our outer and inner stack views are equal.
+![ms-video](assets/add_outer_stack_view_constraints.gif)
+
+To make sure the outer and inner stack views are equal you need a couple more constraints. 
 
 ### Equal Widths Constraints
 
-> [action]
-Set equal widths constraints for each stack view:
+> [action] Set equal widths constraints for each stack view:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/add_stack_view_equal_widths_constraints.mp4)
+> Step-by-step:
 >
-Step-by-step:
->
-1. Collapse both inner stack views in the _Document Outline_.
-1. Select the outer stack view in the _Document Outline_.
-1. With the outer stack view selected, shift-click the bottom inner stack view to select all three stack views simultaneously.
-1. With all stack views selected, click the `Add New Constraints` button.
-1. Select the `Equal Widths` checkbox and click `Add 2 Constraints` to create your equal width constraints.
+> 1. Collapse both inner stack views in the _Document Outline_.
+> 2. Select the outer stack view in the _Document Outline_.
+> 3. With the outer stack view selected, shift-click the bottom inner stack view to select all three stack views simultaneously.
+> 4. With all stack views selected, click the `Add New Constraints` button.
+> 5. Select the `Equal Widths` checkbox and click `Add 2 Constraints` to create your equal width constraints.
+
+![ms-video](assets/add_stack_view_equal_widths_constraints.gif)
 
 Our progress so far:
 
 ![Stack View Equal Widths Unstyled](assets/stack_view_equal_widths_unstyled.png)
 
-Let's add our final width constraints for our text field and segmented control respectively.
-
 ### Fixed Width Constraints
 
-> [action]
-Set a width constraint for the _Bill Amount Text Field_:
+> [action] Set a width constraint for the _Bill Amount Text Field_:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/text_field_width_constraint.mp4)
+> Step-by-step:
 >
-Step-by-step:
->
-1. Select the `UITextField` object in the _Document Outline_.
-1. With the text field selected, click the `Add New Constraints` button.
-1. Set a fixed width constraint of 118pts.
+> 1. Select the `UITextField` object in the _Document Outline_.
+> 2. With the text field selected, click the `Add New Constraints` button.
+> 3. Set a fixed width constraint of 118pts.
 
-Finally, we'll need to add a fixed width constraint for our `UISegmentedControl`. Try to see if you can implement it by yourself.
+![ms-video](assets/text_field_width_constraint.gif)
 
-> [challenge]
-Add a width constraint for your _Tip Percent Segmented Control_ object. Set the width to 173pts. If you have trouble or get stuck, look at the previous example of adding a width constraint to our text field.
+Finally, add a fixed width constraint to the `UISegmentedControl`. Try to see if you can implement it by yourself.
+
+> [challenge] Add a width constraint for your _Tip Percent Segmented Control_ object. Set the width to 173pts. If you have trouble or get stuck, look at the previous example of adding a width constraint to our text field.
 
 Check your solution below.
 
-> [solution]
-We set a width constraint for our _Tip Percent Segmented Control_ with the following:
->
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/segmented_control_width_constraint.mp4)
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+> [solution] We set a width constraint for our _Tip Percent Segmented Control_ with the following:
 >
 Step-by-step:
 >
-1. Select the `UISegmentedControl` object in the _Document Outline_.
-1. With the segmented control selected, click the `Add New Constraints` button.
-1. Set a fixed width constraint of 173pts.
+> 1. Select the `UISegmentedControl` object in the _Document Outline_.
+> 2. With the segmented control selected, click the `Add New Constraints` button.
+> 3. Set a fixed width constraint of 173pts.
 
-We've come a long ways from where we first started. We've finished adding all of our stack views and each view's constraints.
+![ms-video](assets/segmented_control_width_constraint.gif)
+
+This has come a long ways from where you first started. You've finished adding all of your stack views and each view's constraints.
 
 ![Input Card Finished Constraints Unstyled](assets/input_card_finished_constraints_unstyled.png)
 
-As you can see, our input card is starting to look more and more like our design. Next, we'll work on configuring our input card view attributes.
+As you can see, the input card is starting to look more and more like the design. Next, work on configuring the input card view attributes.
 
 ## Configuring Attributes
 
@@ -673,398 +672,170 @@ We'll quickly go through one together for review and let you do the rest on your
 
 ### Input Card Background Color
 
-> [action]
-Set the _Input Card's_ background color to `tcDarkBlue`:
->
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/set_input_card_bg_color.mp4)
+> [action] Set the _Input Card's_ background color to `tcDarkBlue`:
 >
 Step-by-step:
 >
-1. Select the input card view (`UIView`).
-1. Open the _Attributes Inspector_ in the _Utilities area_.
-1. Find the _Background_ attribute and use the blue dropdown button to change it's value from `White Color` to `tcDarkBlue`.
+> 1. Select the input card view (`UIView`).
+> 2. Open the _Attributes Inspector_ in the _Utilities area_.
+> 3. Find the _Background_ attribute and use the blue dropdown button to change it's value from `White Color` to `tcDarkBlue`.
+
+![ms-video](assets/set_input_card_bg_color.gif)
 
 Now it's your turn.
 
-> [challenge]
-Set each of the following attributes for each respective element:
+> [challenge] Set each of the following attributes for each respective element:
 >
+
 **Outer Stack View:**
+
 >
 - _Spacing_: Change from `0` to `35`
 >
+
 **Bill Amount Title Label (Inner Top Stack View):**
->
+
 - _Text_: Change from `Label` to `Bill Amount`
 - _Font_: Change from `System 17.0` to `System 20.0`
 - _Color_: Change from `Default` to `tcWhite`
 - _Alignment_: Change from `---` to `Left Aligned`
->
+
 **Bill Amount Text Field (Inner Top Stack View):**
->
+
 - _Alignment_: Change from `---` to `Center Aligned`
 - _Placeholder_: Change from empty to `$0.00`
 - _Correction_: Change from `Default` to `No`
 - _Keyboard Type_: Change from `Default` to `Decimal Pad`
 - _Keyboard Look_: Change from `Default` to `Light`
 - _Tint_: Change from `Default` to `tcHotPink`
->
+
 **Tip Percent Title Label (Inner Bottom Stack View):**
->
+
 - _Text_: Change from `Label` to `Tip %`
 - _Font_: Change from `System 17.0` to `System 20.0`
 - _Color_: Change from `Default` to `tcWhite`
 - _Alignment_: Change from `---` to `Left Aligned`
->
+
 **Tip Percent Segmented Control (Inner Bottom Stack View):**
->
+
 - _Segments_: Change from `2` to `3`
 - _Tint_: Change from `Default` to `tcHotPink`
 
 The last attribute we'll need to set is the title for each segment our segmented control.
 
-> [action]
-For each segment of your segmented control, set the title attribute to `15%`, `18%`, `20%` respectively:
+> [action] For each segment of your segmented control, set the title attribute to `15%`, `18%`, `20%` respectively:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/set_segmented_control_titles.mp4)
 
-Let's build and run our project to see our progress.
+![ms-video](assets/set_segmented_control_titles.gif)
+
+Time to build build and run your project to see your progress.
 
 ![Input Card Styled](assets/input_card_styled.png)
 
-Bam! Our app matches our design (with exception of the rounded corners of course).
+Bam! Your app matches the design (with exception of the rounded corners of course).
 
-> [info]
-Rounded corners (and shadows) make use of our view's layer property. We'll cover this later in this tutorial.
+> [info] Rounded corners (and shadows) make use of our view's layer property. We'll cover this later in this tutorial.
 
 Let's continue by creating the IB connections needed for our input card.
 
 ## Adding Our IB Connections
 
-We've done this before with our header view. Let's get some more practice creating IB connections.
+You've done this before with the header view. Get some more practice creating IB connections.
 
-We'll do another together for review.
+Create an `IBOutlet` for our input card (`UIView`).
 
-Let's create an `IBOutlet` for our input card (`UIView`).
+> [action] Create an `IBOutlet ` for the input card view:
+>
+> Step-by-step:
+>
+> 1. Open `Main.storyboard` in your _Editor area_.
+> 2. Option-click on `ViewController.swift` in your _Project Navigator_ to open it in your _Assitant Editor_.
+> 3. (Optional) Hide the _Utilities area_ to make more screen space for the _Assistant Editor_.
+> 4. Select the input card view (`UIView`).
+> 5. With your input card selected, hold down control and click-drag from the input card to your `ViewController` class.
+> 6. In the popup, set the _Name_ field to `inputCardView` and click connect to create your new outlet.
 
-> [action]
-Create an `IBOutlet ` for the input card view:
->
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/input_card_ibaction.mp4)
->
-Step-by-step:
->
-1. Open `Main.storyboard` in your _Editor area_.
-1. Option-click on `ViewController.swift` in your _Project Navigator_ to open it in your _Assitant Editor_.
-1. (Optional) Hide the _Utilities area_ to make more screen space for the _Assistant Editor_.
-1. Select the input card view (`UIView`).
-1. With your input card selected, hold down control and click-drag from the input card to your `ViewController` class.
-1. In the popup, set the _Name_ field to `inputCardView` and click connect to create your new outlet.
+![ms-video](assets/input_card_ib_connections.png)
 
 <!-- break -->
 
-> [challenge]
-Now it's your turn to practice. If you find yourself stuck, look back on how we implemented our previous `IBOutlets` to refresh your memory.
+> [challenge] Now it's your turn to practice. If you find yourself stuck, look back on how we implemented our previous `IBOutlets` to refresh your memory.
 >
 Create the following `IBOutlets`:
 >
 - `UITextField` named `billAmountTextField`
 - `UISegmentedControl` named `tipPercentSegmentedControl`
 
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+![textfield and segemented iboutlets](assets/textfield_and_segemented_iboutlet.gif)
+
 Finally, we'll need to create an `IBAction` for our segmented control.
 
-> [challenge]
-Try implementing an `IBAction` for your `UISegmentedControl`. Set the _Name_ as `tipPercentChanged` and check that the _Event type_ is `Value Changed`. If you get stuck, you can look back in the tutorial or check the solution (only if you're really stuck!)
+> [challenge] Try implementing an `IBAction` for your `UISegmentedControl`. Set the _Name_ as `tipPercentChanged` and check that the _Event type_ is `Value Changed`. If you get stuck, you can look back in the tutorial or check the solution (only if you're really stuck!)
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 
 <!-- break -->
 
-> [solution]
-Creating an `IBAction` is similar to creating an `IBOutlet`:
+> [solution] Creating an `IBAction` is similar to creating an `IBOutlet`:
 >
-![ms-video](https://s3.amazonaws.com/mgwu-misc/Tip+Calculator+Swift+4/p4_implementing_subviews/segmented_control_ibaction.mp4)
+> Step-by-step:
 >
-Step-by-step:
->
-1. Select your segmented control (`UISegmentedControl`) in the _Document Outline_.
-1. With your segmented control selected, hold down ctrl and click-drag from the segmented control in your _Document Outline_ to your `ViewController` class.
-1. You should see a popup for creating a new IB connection. In the popup, change the _Connection_ type from `Outlet` to `Action`.
-1. Set the name of our action as `tipPercentChanged`.
-1. Change the _Type_ property from `Any` to `UISegmentedControl`.
-1. Make sure the _Event_ property is set as `Value Changed`. If not, use the dropdown to set it to `Value Changed`.
-1. Click _Connect_ to create your new `IBAction`.
+> 1. Select your segmented control (`UISegmentedControl`) in the _Document Outline_.
+> 2. With your segmented control selected, hold down ctrl and click-drag from the segmented control in your _Document Outline_ to your `ViewController` class.
+> 3. You should see a popup for creating a new IB connection. In the popup, change the _Connection_ type from `Outlet` to `Action`.
+> 4. Set the name of our action as `tipPercentChanged`.
+> 5. Change the _Type_ property from `Any` to `UISegmentedControl`.
+> 6. Make sure the _Event_ property is set as `Value Changed`. If not, use the dropdown to set it to `Value Changed`.
+> 7. Click _Connect_ to create your new `IBAction`.
+
+![ms-video](assets/segmented_control_ibaction.gif)
 
 When you're done, your storyboard and Swift code should look like the following:
 
 ![Input Card IB Connections](assets/input_card_ib_connections.png)
 
-If everything looks right, on to the next! If something's off, let's go back in the tutorial and make sure we didn't accidentally skip any steps.
-
 <!-- TODO: add custom textfield, but don't do that here -->
-
-# Output Card View
-
-We've gone through the process of implementing each of our subviews for two of the four UI groups. We'll need to do it once again. This time we'll be more hands-off to give you practice doing it yourself.
-
-Let's take another look at our design:
-
-![Output Card Design](assets/output_card_design.png)
-
-For our output card, we'll need to add the following UI components:
-
-![Tip Output Subviews](assets/tip_output_subviews.png)
-
-We'll need to add four new labels. Next, let's think about how we'll layout our views.
-
-## Identifying Constraints
-
-Similar to our input card, we'll use a combination of stack views and constraints to implement our layout.
-
-![Output Outer Stack View](assets/output_outer_stack_view.png)
-
-First, we'll have two horizontal stack views:
-
-- (Inner Top Stack View) _Tip Amount Title Label_ and _Tip Amount Label_
-- (Inner Bottom Stack View) _Total Amount Title Label_ and _Total Amount Label_
-
-Next, we'll create a outer (vertical) stack view from the two inner stack views.
-
-Just like the input card's outer stack view, we'll add the following constraints to set the frame of the outer stack view:
-
-- (Outer Stack View) Leading Edge 22pts from Super View (output card) Leading Edge
-- (Outer Stack View) Trailing Edge 22pts from Super View Trailing Edge
-- (Outer Stack View) Center vertically aligned with Super View Center
-
-Finally, we'll add a few more constraints to make sure our subview widths are the correct size:
-
-- (Inner Top Stack View) Equal Width to Outer Stack View Width
-- (Inner Bottom Stack View) Equal Width to Outer Stack View Width
-- (Tip Amount Title Label) 110pts Width
-- (Total Amount Title Label) 110pts Width
-
-> [info]
-Look back on how we implemented the input card for more details if you're wondering why we've added any of the constraints.
-
-## Adding Constraints
-
-We've already had practice with using stack views and constraints. This time, try practicing on your own. If you get stuck, look back on how we implemented the layout for our input card.
-
-> [challenge]
-Create the inner top stack view with two `UILabel` views.
-
-<!-- break -->
-
-> [solution]
->
-1. Drag two `UILabel` objects side-by-side from the _Object Library_.
-1. Select both labels and create a horizontal stack view.
-
-We'll also need to create the inner bottom stack view.
-
-> [challenge]
-Create the inner bottom stack view with two `UILabel` views.
-
-<!-- break -->
-
-> [solution]
->
-1. Drag two `UILabel` objects side-by-side from the _Object Library_. Make sure both labels are below the previous stack view.
-1. Select both labels and create a horizontal stack view.
-
-Next, let's create our outer stack view.
-
-> [challenge]
-Create the _Outer Stack View_ using both inner (horizontal) stack views.
-
-<!-- break -->
-
-> [solution]
->
-1. Collapse and select both inner stack views in the _Document Outline_.
-1. With both inner stack views selected, click on the `Embed In Stack` button to create your outer stack view.
-
-Your storyboard should now look like the following:
-
-![Output Card Outer Stack View Unstyled](assets/output_card_outer_stack_view_unstyled.png)
-
-Next, let's add the constraints for our outer stack view.
-
-> [challenge]
-Set the outer stack view's frame with the following constraints:
->
-- (Outer Stack View) Leading Edge 22pts from Super View (output card) Leading Edge
-- (Outer Stack View) Trailing Edge 22pts from Super View Trailing Edge
-- (Outer Stack View) Center vertically aligned with Super View Center
-
-<!-- break -->
-
-> [solution]
->
-1. Select the outer stack view in the _Document Outline_.
-1. With your outer stack view selected, click the `Add New Constraints` button.
-1. Add the following two constraints using the `Add New Constraints` popup:
-    - (Outer Stack View) Leading Edge 22pts from Super View (output card) Leading Edge
-    - (Outer Stack View) Trailing Edge 22pts from Super View Trailing Edge
-1. In the _Document Outline_, hold down control (ctrl) and click-drag from the outer stack view to it's super view (output card).
-1. In the popup, select `Center Vertically In Container` to create a new constraint. This will vertically align the outer stack view's center with it's super view's center.
-
-To finish up, we'll add the remaining width constraints.
-
-> [challenge]
-Set each of the width constraints for each respective view:
->
-- (Inner Top Stack View) Equal Width to Outer Stack View Width
-- (Inner Bottom Stack View) Equal Width to Outer Stack View Width
-- (Tip Amount Title Label) 110pts Width
-- (Total Amount Title Label) 110pts Width
-
-<!-- break -->
-
-> [solution]
-To create both equal width constraints:
->
-1. Collapse both inner stack views in the _Document Outline_.
-1. Select the outer stack view in the _Document Outline_.
-1. With the outer stack view selected, shift-click the bottom inner stack view to select all three stack views simultaneously.
-1. With all stack views selected, click the `Add New Constraints` button.
-1. Select the `Equal Widths` checkbox and click `Add 2 Constraints` to create your equal width constraints.
->
-To create each title label's fixed width constraint:
->
-1. Select the `UILabel` object in the _Document Outline_. Make sure you're selecting the correct label.
-1. With the label selected, click the `Add New Constraints` button.
-1. Set a fixed width constraint of 110pts.
-1. Repeat the previous steps for the remaining title label.
-
-Whew! That was a lot of work in a short time. Nice job! When you're finished adding all stack views and view constraints your storyboard should look like the following:
-
-![Output Card Finished Constraints Unstyled](assets/output_card_finished_constraints_unstyled.png)
-
-Next, we'll configure our output card view attributes so that it matches our designs.
-
-## Configuring Attributes
-
-> [challenge]
-Set each of the following attributes for each respective element. Remember, if you get stuck you can look back to the previous steps in the tutorial for reference.
->
-**Output Card View:**
->
-- _Background_: Change from `White Color` to `tcWhite`
->
-**Outer Stack View:**
->
-- _Spacing_: Change from `0` to `35`
->
-**Tip Amount Title Label (Inner Top Stack View):**
->
-- _Text_: Change from `Label` to `Tip Amount`
-- _Font_: Change from `System 17.0` to `System Light 20.0`
-- _Color_: Change from `Default` to `tcCharcoal`
-- _Alignment_: Change from `---` to `Left Aligned`
->
-**Tip Amount Label (Inner Top Stack View):**
->
-- _Text_: Change from `Label` to `$0.00`
-- _Font_: Change from `System 17.0` to `System Medium 20.0`
-- _Color_: Change from `Default` to `tcBlack`
-- _Alignment_: Change from `---` to `Right Aligned`
->
-**Total Amount Title Label (Inner Bottom Stack View):**
->
-- _Text_: Change from `Label` to `Total`
-- _Font_: Change from `System 17.0` to `System Light 20.0`
-- _Color_: Change from `Default` to `tcCharcoal`
-- _Alignment_: Change from `---` to `Left Aligned`
->
-**Total Amount Label (Inner Bottom Stack View):**
->
-- _Text_: Change from `Label` to `$0.00`
-- _Font_: Change from `System 17.0` to `System Medium 20.0`
-- _Color_: Change from `Default` to `tcBlack`
-- _Alignment_: Change from `---` to `Right Aligned`
-
-Let's build and run our project to see our progress.
-
-![Output Card Styled](assets/output_card_styled.png)
-
-Our app is really starting to come along! Let's finish by creating the IB connections needed for our output card.
-
-## Adding Our IB Connections
-
-> [challenge]
-Add the following IB connections. If you find yourself stuck, look back on how we implemented our previous `IBOutlets` to refresh your memory.
->
-Use the diagram below for reference:
->
-![Tip Output Subviews](assets/tip_output_subviews.png)
->
-Create the following `IBOutlets`:
->
-- `UIView` named `outputCardView`
-- `UILabel` named `tipAmountTitleLabel`
-- `UILabel` named `tipAmountLabel`
-- `UILabel` named `totalAmountTitleLabel`
-- `UILabel` named `totalAmountLabel`
-
-When you're done, your storyboard and Swift code should look like the following:
-
-![Output Card IB Connections](assets/output_card_ib_connections.png)
-
-# Reset Button
-
-Let's finish our last UI group: the reset button. Unlike the other UI groups, we won't need to add any subviews or extra constraints. We'll just need to styling our button and add it's IB connections.
-
-## Configuring Attributes
-
-> [challenge]
-You know the drill. Set each of the following attributes for the reset button:
->
-**Reset Button:**
->
-- _Type_: Change from `System` to `Custom`
-- _Title_: Change from `Button` to `RESET`
-- _Font_: Change from `System 15.0` to `System Bold 13.0`
-- _Text Color_: Change from `Default` to `tcWhite`
-
-Your reset button should look like the following when you're done:
-
-![Reset Button Styled](assets/reset_button_styled.png)
-
-## Creating IB Connections
-
-Last, we'll need to add the button's IB connections.
-
-> [challenge]
-Use the _Assistant Editor_ to add the following IB connections to your `ViewController` class:
->
-1. Create an `IBOutlet` for the reset button named `resetButton`.
-1. Create an `IBAction` for the reset button with the name `resetButtonTapped` with _Event type_ of `Touch Up Inside`.
-
-When you're done, your storyboard and view controller source code should look like the following:
-
-![Reset Button IB Connections](assets/reset_button_ib_connections.png)
-
-### Testing Our IBAction
-
-Let's make sure that our `IBAction` is working as expected.
-
-> [action]
-Add a print statement in your `resetButtonTapped` function to test that it's working:
->
-```
-@IBAction func resetButtonTapped(_ sender: UIButton) {
-    print("reset button tapped")
-}
-```
-
-Build and run your project. Tap the reset button a couple of times and verify that your print statement is being output to the debug console. Each time you tap the reset button, you should see the following:
-
-![Reset Button Debug Print](assets/reset_button_debug_print.png)
-
-# Conclusion
-
-That's a wrap! We've learned a ton about implementing complex layouts with _auto-layout_, constraints and stack views. In the process, we've gotten a lot of practice and implemented the majority of our UI. In the next section, we'll work on implementing the logic for our tip calculator.
 
 # Continue to the next section
 
-[Tip Calculator Logic](../P5-Tip-Calculator-Logic)
-
+[Tip Calculator Logic](../P05-Output-Card/)
