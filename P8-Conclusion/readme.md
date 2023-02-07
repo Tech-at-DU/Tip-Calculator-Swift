@@ -49,7 +49,6 @@ Notice that there aren't any text fields or segmented controllers in the design 
 
 If you'd like a better idea of how the app works, go ahead and download the free version of this [popular currency convertor](https://itunes.apple.com/us/app/currency-converter/id628148586?mt=8) on the App Store. You should **not** need to purchase anything to download this app.
 
-> [info]
-For your exchange calculation, find the currency conversion rate online and hard-code it into your app.
+> [info] For your exchange calculation, find the currency conversion rate online and hard-code it into your app.
 
 Good luck the challenge! Remember, you can look back on the tutorial or your previous code if you get stuck.
